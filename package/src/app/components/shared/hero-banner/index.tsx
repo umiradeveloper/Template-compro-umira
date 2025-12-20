@@ -21,7 +21,7 @@ const Herobanner = ({ bannerimage, heading, desc, headingClass = "large-heading"
                     <div className="flex items-start gap-2 md:gap-6">
                         <div className="w-11 h-11 flex-shrink-0">
                             <Image
-                                src={"/images/Icon/primary-leaf.svg"}
+                                src={"/images/Icon/umiralogosq.png"}
                                 alt="icon"
                                 width={44}
                                 height={44}

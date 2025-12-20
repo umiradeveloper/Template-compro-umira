@@ -21,23 +21,22 @@ const avatarList = [
 
 const statsFactData = {
     number: '01',
-    name: "Stats & facts",
-    heading: "High quality web design solutions you can trust.",
-    description: "When selecting a web design agency, it's essential to consider its reputation, experience, and the specific needs of your project.",
+    name: "Stats",
+    heading: "Build Your Future and Investment",
+    description: "with Structural Excellence in Your Dream Place",
     scoreData: [
         {
-            number: 40,
-            numberValue: 'K',
-            scoreDescp: "People who have launched their websites"
+            number: 24,
+            scoreDescp: "Years Of Experiences "
         },
         {
-            number: 238,
-            scoreDescp: "Experienced professionals ready to assist"
+            number: 50,
+            scoreDescp: "Clients that We nurture connections beyond client interests"
         },
         {
-            number: 3,
-            numberValue: 'M',
-            scoreDescp: "Support through messages and live consultations"
+            number: 47256,
+            numberValue: 'm²',
+            scoreDescp: "The project consists of a total of 429 villa units and 1 hotel. The combined total land area for the villas and hotel amounts to 47,256.64 m²."
         },
     ]
 };
@@ -100,9 +99,9 @@ const teamData = {
     number: '06',
     data: [
         {
-            image: "/images/home/team/team-img-1.png",
-            name: "Martha Finley",
-            position: "Creative Director",
+            image: "/images/home/team/team-img.jpg",
+            name: "Fauzie Pohan",
+            position: "Chief Executive Officer",
             socialLinks: [
                 {
                     icon: "/images/socialIcon/twitter.svg",
@@ -119,9 +118,9 @@ const teamData = {
             ]
         },
         {
-            image: "/images/home/team/team-img-2.png",
-            name: "Floyd Miles",
-            position: "Marketing Strategist",
+            image: "/images/home/team/team-img.jpg",
+            name: "Muhammad Iqbal",
+            position: "Chief Finance Officer",
             socialLinks: [
                 {
                     icon: "/images/socialIcon/twitter.svg",
@@ -138,9 +137,9 @@ const teamData = {
             ]
         },
         {
-            image: "/images/home/team/team-img-3.png",
-            name: "Glenna Snyder",
-            position: "Lead Designer",
+            image: "/images/home/team/team-img.jpg",
+            name: "Ahmad Fauzi",
+            position: "Chief Operative Officer",
             socialLinks: [
                 {
                     icon: "/images/socialIcon/twitter.svg",
@@ -157,9 +156,9 @@ const teamData = {
             ]
         },
         {
-            image: "/images/home/team/team-img-4.png",
-            name: "Albert Flores",
-            position: "UX/UI Developer",
+            image: "/images/home/team/team-img.jpg",
+            name: "Muhammad Hari Wijaya",
+            position: "Chief Technology Officer",
             socialLinks: [
                 {
                     icon: "/images/socialIcon/twitter.svg",
@@ -245,28 +244,27 @@ const contactData = {
 
 const aboutusStats = [
     {
-        number: 45,
+        number: 50,
         postfix:"+",
-        title: 'Presence in global markets',
-        descp: "Expanding reach across international regions with localized expertise and worldwide impact."
+        title: 'Clients',
+        descp: "We nurture connections beyond client interests"
     },
     {
-        number: 15,
-        prefix: "$",
-        postfix: "M",
-        title: 'In strategic investments',
-        descp: "Driving growth with curated partnerships and high-performing, audience-driven initiatives."
+        number: 24,
+        postfix: " Years",
+        title: 'Of Experience',
+        descp: "Design, Construction & Infrastucture"
     },
     {
-        number: 158,
-        postfix: "+",
-        title: 'Trusted brand collaborations',
-        descp: "Shaping industry conversations through innovation, creativity, and lasting influence."
+        number: 47256,
+        postfix: " m²",
+        title: 'Total Building Area',
+        descp: "The project consists of a total of 429 villa units and 1 hotel. The combined total land area for the villas and hotel amounts to 47,256.64 m²."
     },
 ]
 
 const servicesSliderData = [
-    "Branding", "Web development", "Agency","Content creation","SaaS","Motion & 3d modeling","Photography"
+    "Design", "Build", "MEP","Interior","Architecture","BIM Modeling","Structure"
 ]
 
 

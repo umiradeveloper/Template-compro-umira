@@ -9,7 +9,7 @@ function AboutusHero() {
             <Image
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 alt="Image"
-                src={"/images/about-us/banner/aboutus-banner.png"}
+                src={"/images/about-us/banner/teamphoto.png"}
                 height={694}
                 width={1800}
             />
@@ -20,7 +20,7 @@ function AboutusHero() {
                     <div className="flex items-start gap-2 md:gap-6">
                         <div className="w-11 h-11 flex-shrink-0">
                             <Image
-                                src={"/images/Icon/primary-leaf.svg"}
+                                src={"/images/Icon/umiralogosq.png"}
                                 alt="icon"
                                 width={44}
                                 height={44}
@@ -28,8 +28,7 @@ function AboutusHero() {
                             />
                         </div>
                         <p className="text-white/70 max-w-md">
-                            We create <span className="text-primary">high-performing</span> digital designs
-                            that elevate brands and enhance conversions.
+                            A <span className="text-primary">professional, rapidly growing, sustainable</span> design and engineering construction company since 2016.
                         </p>
                     </div>
                     <div className="flex flex-col lg:flex-row items-start lg:items-end gap-4">

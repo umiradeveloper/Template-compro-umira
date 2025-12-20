@@ -52,13 +52,28 @@ const footerData = {
     info: [
         {
             icon: "/images/footer/email-arrow.svg",
-            link: "info@wrappixel.com",
+            link: "info@umiraglobal.com",
             href: "https://www.wrappixel.com/"
         },
         {
             icon: "/images/footer/Location.svg",
-            link: "Zwolle Netherlands",
-            href: "https://maps.app.goo.gl/hpDp81fqzGt5y4bC8"
+            link: "Head Office Yogyakarta",
+            href: "https://maps.app.goo.gl/HRBYtZbR8Siy1pKy5"
+        },
+        {
+            icon: "/images/footer/Location.svg",
+            link: "Jakarta Branch Office",
+            href: "https://share.google/6Y2JBSCfmVTRKeTHz"
+        },
+        {
+            icon: "/images/footer/Location.svg",
+            link: "Surabaya Branch Office",
+            href: "https://maps.app.goo.gl/vSQywm5B2UkTcvxT8"
+        },
+        {
+            icon: "/images/footer/Location.svg",
+            link: "Bali Branch Office",
+            href: "https://maps.app.goo.gl/Uj7bQKHDanSExv6w8"
         }
     ],
     links: [
@@ -71,11 +86,11 @@ const footerData = {
         { name: "Error 404", href: "/not-found" }
     ],
     socialLinks: [
-        { name: "Facebook", href: "https://www.facebook.com/" },
-        { name: "Instagram", href: "https://www.instagram.com/" },
-        { name: "Twitter", href: "https://x.com/" }
+        { name: "Facebook", href: "https://www.facebook.com/umiraglobal" },
+        { name: "Instagram", href: "https://www.instagram.com/umiraglobal" },
+        { name: "Youtube", href: "https://youtube.com/@umiraglobal"}
     ],
-    copyright: "© Studiova copyright 2025"
+    copyright: "© Umira Sinergi Global copyright 2025"
 };
 
 export const GET = async () => {

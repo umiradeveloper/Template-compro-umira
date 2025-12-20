@@ -28,7 +28,7 @@ function HeroSection() {
                             <div className="flex items-start gap-2 md:gap-6">
                                 <div className="w-11 h-11 flex-shrink-0">
                                     <Image
-                                        src={"/images/Icon/primary-leaf.svg"}
+                                        src={"/images/Icon/umiralogosq.png"}
                                         alt="icon"
                                         width={44}
                                         height={44}
@@ -36,12 +36,11 @@ function HeroSection() {
                                     />
                                 </div>
                                 <p className="text-white/70 max-w-md">
-                                    We create <span className="text-primary">high-performing</span> digital designs
-                                    that elevate brands and enhance conversions.
+                                    A <span className="text-primary">professional, rapidly growing, sustainable</span> design and engineering construction company since 2016.
                                 </p>
                             </div>
                             <div className="flex flex-col lg:flex-row items-start lg:items-end gap-4">
-                                <h1 className="large-heading">Studiova</h1>
+                                <h1 className="large-heading">Umira Global</h1>
                                 <div>
                                     <div className="bg-primary rounded-full p-1.5 pl-8">
                                         <Image src={"/images/Icon/arrow-icon.svg"} alt="icon" height={52} width={52} />

@@ -12,7 +12,7 @@ import Team from "./components/home/team";
 import Testimonial from "./components/home/testimonial";
 
 export const metadata: Metadata = {
-    title: "Studiova",
+    title: "Umira Sinergi Global | Kontraktor Bali",
 };
 
 export default function Home() {
