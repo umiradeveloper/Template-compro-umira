@@ -61,7 +61,7 @@ const Projectswiper = () => {
                                 >
                                     <span className="flex justify-center items-center p-5 w-full">
                                         <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="0.333374" width="64" height="64" rx="32" fill="#C1FF72" />
+                                            <rect x="0.333374" width="64" height="64" rx="32" fill="#f4eee2" />
                                             <path
                                                 d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
                                                 stroke="#1F2A2E"

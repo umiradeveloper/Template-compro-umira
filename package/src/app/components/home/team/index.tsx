@@ -21,7 +21,7 @@ const Team = (props: {teamdataNumber: string}) => {
           }
           fetchData()
         }, [])
-
+        //{teamdataNumber ? teamdataNumber : teamData.number}
     return (
         <section className="dark:bg-darkblack py-20 md:py-40">
             <div className="flex flex-col gap-24">
@@ -29,14 +29,14 @@ const Team = (props: {teamdataNumber: string}) => {
                     <div className="flex flex-col gap-14 xl:gap-24">
                         <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">
                             <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
-                                <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">{teamdataNumber ? teamdataNumber : teamData.number}</span>
+                                <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">04</span>
                                 <div className="h-px w-16 bg-black/12 dark:bg-white/12"/>
                                 <p className="section-bedge py-1.5 px-4 rounded-full">The Management</p>
                             </div>
                             <div className="flex flex-col gap-11">
                                 <div className="flex flex-col gap-5 ">
                                     <h2 className="max-w-3xl">Meet our Management</h2>
-                                    <p className="max-w-2xl text-secondary/70 dark:text-white/70">Our team is committed to redefining digital experiences through innovative web solutions while fostering a diverse and collaborative environment.</p>
+                                    <p className="max-w-2xl text-secondary/70 dark:text-white/70">Behind every successful project is a strong team. Get to know the people leading our operations and project execution.</p>
                                 </div>
                             </div>
                         </div>

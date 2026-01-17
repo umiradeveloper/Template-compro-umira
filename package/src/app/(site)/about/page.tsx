@@ -5,7 +5,7 @@ import Team from "@/app/components/home/team";
 import Herobanner from "@/app/components/shared/hero-banner";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Aboutus | Studiova",
+    title: "About Us | Umira Sinergi Global",
 };
 
 export default function Page() {

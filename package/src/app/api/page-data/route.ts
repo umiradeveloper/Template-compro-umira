@@ -45,31 +45,25 @@ const servicesData = {
     number: '03',
     name: "Services",
     heading: "What we do",
-    description: "A glimpse into our creativity—exploring innovative designs, successful collaborations, and transformative digital experiences.",
+    description: "From planning to construction, we’re here to support your needs. Discover our services and how we deliver reliable solutions.",
     data: [
         {
             id: 1,
-            image: "/images/home/services/services_1.png",
-            heading: "Brand identity",
-            descp: "When selecting a web design agency, it's essential to consider its reputation, experience, and the specific needs of your project."
+            image: "/images/home/services/foundation.png",
+            heading: "Foundation & Building Construction",
+            descp: "We specialize in strong foundations and high-quality buildings that meet top industry standards."
         },
         {
             id: 2,
-            image: "/images/home/services/services_2.png",
-            heading: "Web development",
-            descp: "When selecting a web design agency, it's essential to consider its reputation, experience, and the specific needs of your project."
+            image: "/images/home/services/architecture.png",
+            heading: "Civil Construction & Architecture",
+            descp: "We craft innovative and resilient solutions in civil construction and architecture, shaping spaces that stand the test of time."
         },
         {
             id: 3,
-            image: "/images/home/services/services_3.png",
-            heading: "Content creation",
-            descp: "When selecting a web design agency, it's essential to consider its reputation, experience, and the specific needs of your project."
-        },
-        {
-            id: 4,
-            image: "/images/home/services/services_4.png",
-            heading: "Motion & 3d modeling",
-            descp: "When selecting a web design agency, it's essential to consider its reputation, experience, and the specific needs of your project."
+            image: "/images/home/services/interior.png",
+            heading: "Interior Works",
+            descp: "We craft exclusive, luxurious interiors that blend opulence with refined functionality, creating spaces that redefine elite living."
         },
     ]
 };
@@ -212,24 +206,20 @@ const pricingData = {
 const faqData = {
     data: [
         {
-            faq_que: "What services does your agency offer?",
-            faq_ans: 'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.'
+            faq_que: "What services does Umira Sinergi Global provide?",
+            faq_ans: 'Umira Sinergi Global provides integrated design and build services, including architectural design, structural engineering, MEP systems, construction works, renovation, and project management for villas, residential buildings, commercial spaces, and infrastructure projects.'
         },
         {
-            faq_que: "How long does a typical project take?",
-            faq_ans: 'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.'
+            faq_que: "Do you handle projects from design to construction?",
+            faq_ans: 'Yes. We offer a complete design & build solution, managing the entire process from initial concept and planning to construction and final handover, ensuring efficiency, quality control, and clear coordination.'
         },
         {
-            faq_que: "Do you offer custom designs, or do you use templates?",
-            faq_ans: 'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.'
+            faq_que: "How do you ensure quality and safety during construction?",
+            faq_ans: 'Quality and safety are our top priorities. Each project is supervised by experienced engineers and site teams, supported by structured quality control procedures, HSE standards, and regular progress monitoring throughout the construction process.'
         },
         {
-            faq_que: "What’s the cost of a project?",
-            faq_ans: 'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.'
-        },
-        {
-            faq_que: "Do you provide ongoing support after project completion?",
-            faq_ans: 'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.'
+            faq_que: "How can I start a project with Umira Sinergi Global?",
+            faq_ans: 'You can start by contacting our team through the Contact Us page. Shate your project details, location, and requirements, and our team will arrange a discussion or site visit to provide the most suitable solution.'
         }
     ]
 };

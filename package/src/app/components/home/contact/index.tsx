@@ -37,11 +37,11 @@ const Contact = (props: { contactdataNumber: string }) => {
         e.preventDefault();
         setLoader(true);
 
-        fetch("https://formsubmit.co/ajax/bhainirav772@gmail.com", {
+        fetch("https://formsubmit.co/ajax/info.umiraglobal@gmail.com", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
-                name: formData.name,
+                name: formData.name,    
                 email: formData.email,
                 message: formData.message,
             }),
@@ -72,7 +72,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                     <div className="flex flex-col gap-14 xl:gap-24">
                         <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">
                             <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
-                                <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">{contactdataNumber ? contactdataNumber : 10}</span>
+                                <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">07</span>
                                 <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
                                 <p className="section-bedge py-1.5 px-4 rounded-full">Contact us</p>
                             </div>
@@ -86,7 +86,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                     <div className="flex flex-col xl:flex xl:flex-row gap-15 xl:gap-48">
                         <div className="max-w-md flex flex-col gap-9 md:gap-16">
                             <div className="flex flex-col gap-5 md:gap-8">
-                                <p className="max-w-2xl text-secondary/70 dark:text-white/70">Let’s collaborate and create something amazing! Tell me about your project—I’m all ears.</p>
+                                <p className="max-w-2xl text-secondary/70 dark:text-white/70">Let’s collaborate and create something great. Tell us about your project, we’re ready to listen.</p>
                                 <div>
                                     <ul className="flex flex-col gap-3">
                                         {contactData?.keypoint?.map((value:any, index:any) => {

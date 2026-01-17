@@ -22,10 +22,7 @@ export default function Home() {
       <StatsFacts/>
       <Portfolio/>
       <Services/>
-      <Aboutus/>
-      <Testimonial/>
       <Team teamdataNumber="06"/>
-      <Pricing/>
       <Faq/>
       <Resources/>
       <Contact contactdataNumber="10"/>

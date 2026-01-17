@@ -37,23 +37,17 @@ const MenuData = [
     path: "/contact",
     newTab: false,
   },
-  {
-    id: 7,
-    title: "Docs",
-    path: "/documentation",
-    newTab: false,
-  }
 ];
 
 
 const footerData = {
-    name: "Studiova",
+    name: "Umira Sinergi Global",
     tagline: "Build something together?",
     info: [
         {
             icon: "/images/footer/email-arrow.svg",
             link: "info@umiraglobal.com",
-            href: "https://www.wrappixel.com/"
+            href: "mailto:info@umiraglobal.com"
         },
         {
             icon: "/images/footer/Location.svg",
@@ -81,14 +75,15 @@ const footerData = {
         { name: "About", href: "/about" },
         { name: "Services", href: "/#services" },
         { name: "Work", href: "/projects" },
-        { name: "Terms", href: "/terms-and-conditions" },
-        { name: "Privacy Policy", href: "/privacy-policy" },
-        { name: "Error 404", href: "/not-found" }
+        //{ name: "Terms", href: "/terms-and-conditions" },
+        //{ name: "Privacy Policy", href: "/privacy-policy" },
+        //{ name: "Error 404", href: "/not-found" }
     ],
     socialLinks: [
         { name: "Facebook", href: "https://www.facebook.com/umiraglobal" },
         { name: "Instagram", href: "https://www.instagram.com/umiraglobal" },
-        { name: "Youtube", href: "https://youtube.com/@umiraglobal"}
+        { name: "Youtube", href: "https://youtube.com/@umiraglobal"},
+        { name: "WhatsApp", href: "http://wa.me/6281539320248"}
     ],
     copyright: "© Umira Sinergi Global copyright 2025"
 };
