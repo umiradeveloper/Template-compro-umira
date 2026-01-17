@@ -14,7 +14,7 @@ import Testimonial from "./components/home/testimonial";
 export const metadata: Metadata = {
     title: "Umira Sinergi Global | Kontraktor Bali",
 };
-
+//<Team teamdataNumber="06"/>
 export default function Home() {
   return (
     <>
@@ -22,7 +22,7 @@ export default function Home() {
       <StatsFacts/>
       <Portfolio/>
       <Services/>
-      <Team teamdataNumber="06"/>
+      
       <Faq/>
       <Resources/>
       <Contact contactdataNumber="10"/>
