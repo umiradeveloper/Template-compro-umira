@@ -10,7 +10,10 @@ type Blog = {
     coverImage: string;
 };
 const Resources = () => {
-    const blogs: Blog[] = getAllBlogs(["title", "slug", "coverImage", "date"]);
+    const blogs: Blog[] = getAllBlogs(["title", "slug", "coverImage", "date"])
+        .sort((a, b) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
 
     return (
         <section className="bg-lightgray dark:bg-secondary py-20 md:py-40">
@@ -26,13 +29,13 @@ const Resources = () => {
                                 </div>
                                 <div className="flex flex-col gap-11">
                                     <div className="flex flex-col gap-5 ">
-                                        <h2 className="max-w-3xl">Recent news</h2>
-                                        <p className="max-w-2xl text-secondary/70 dark:text-white/70">Explore the latest trends, bold projects, and creative insights from our agency—shaping the future of branding, digital experiences, and storytelling.</p>
+                                        <h2 className="max-w-3xl">Latest Activity</h2>
+                                        <p className="max-w-2xl text-secondary/70 dark:text-white/70">Discover our latest updates, project progress, and industry insights.</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-7">
-                                {blogs.slice(0,3).map((value, index) => {
+                                {blogs.slice(0, 3).map((value, index) => {
                                     const formattedDate = new Date(value.date).toLocaleDateString("en-US", {
                                         day: "2-digit",
                                         month: "short",

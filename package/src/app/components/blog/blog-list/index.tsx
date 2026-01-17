@@ -10,7 +10,14 @@ const BlogList = () => {
         coverImage: string;
     };
 
-    const Blogs: Blog[] = getAllBlogs(["title", "slug", "coverImage", "date"]);
+    const Blogs: Blog[] = getAllBlogs([
+        "title",
+        "slug",
+        "coverImage",
+        "date",
+    ]).sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 
     return (
         <section className="dark:bg-darkblack py-20 md:py-40">

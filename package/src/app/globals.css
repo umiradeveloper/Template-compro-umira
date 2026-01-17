@@ -72,10 +72,18 @@ body {
   }
 
   .blog-content p{
-    @apply text-secondary/70 dark:text-white/70;
+    @apply text-secondary/70 dark:text-white/70 mb-4;
   }
 
-  .blog-content h4{
+  .blog-content h3{
+    @apply mt-5 mb-3.5;
+  }
+
+   .blog-content h4{
+    @apply mt-5 mb-3.5;
+  }
+
+  .blog-content h5{
     @apply mt-5 mb-3.5;
   }
 
