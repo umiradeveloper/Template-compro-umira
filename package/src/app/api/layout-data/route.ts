@@ -57,7 +57,7 @@ const footerData = {
         {
             icon: "/images/footer/Location.svg",
             link: "Jakarta Branch Office",
-            href: "https://maps.app.goo.gl/HRBYtZbR8Siy1pKy5"
+            href: "https://maps.app.goo.gl/vsiYLejAPVmNuJNi6"
         },
         {
             icon: "/images/footer/Location.svg",
