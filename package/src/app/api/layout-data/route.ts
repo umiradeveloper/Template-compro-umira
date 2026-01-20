@@ -52,12 +52,12 @@ const footerData = {
         {
             icon: "/images/footer/Location.svg",
             link: "Head Office Yogyakarta",
-            href: "https://maps.app.goo.gl/HRBYtZbR8Siy1pKy5"
+            href: "https://maps.app.goo.gl/bivVqYQzxiisULLU9"
         },
         {
             icon: "/images/footer/Location.svg",
             link: "Jakarta Branch Office",
-            href: "https://share.google/6Y2JBSCfmVTRKeTHz"
+            href: "https://maps.app.goo.gl/HRBYtZbR8Siy1pKy5"
         },
         {
             icon: "/images/footer/Location.svg",
