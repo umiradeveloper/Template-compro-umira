@@ -45,44 +45,7 @@ const Projectswiper = () => {
                 return (
                     <SwiperSlide key={index}>
                         <div className="relative group flex flex-col gap-3 lg:gap-5">
-                            <div className="relative group">
-                                <Link
-                                    href={`/projects/${value.slug}`}
-                                    className="block relative w-full h-80"
-                                >
-                                    <Image
-                                        src={value.coverImage}
-                                        alt={value.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-
-                                    {/* Overlay – hover desktop only */}
-                                    <div
-                                        className="
-                absolute inset-0
-                bg-black/70 backdrop-blur-xs
-                opacity-0
-                md:group-hover:opacity-100
-                transition
-                flex items-center justify-center
-            "
-                                    >
-                                        <svg width="65" height="64" viewBox="0 0 65 64" fill="none">
-                                            <rect x="0.333374" width="64" height="64" rx="32" fill="#f4eee2" />
-                                            <path
-                                                d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
-                                                stroke="#1F2A2E"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </Link>
-                            </div>
-
-                            {/* <div className="relative">
+                             <div className="relative">
                                 <div className="w-auto h-80">
                                     <Image
                                         src={value.coverImage}
@@ -94,8 +57,7 @@ const Projectswiper = () => {
                                 </div>
                                 <Link
                                     href={`/projects/${value.slug}`}
-                                    className="absolute top-0 left-0 backdrop-blur-xs bg-black/70 w-full h-full hidden group-hover:flex"
-                                >
+                                    className="  absolute top-0 left-0 backdrop-blur-xs bg-black/70 w-full h-full flex md:hidden md:hidden md:group-hover:flex">
                                     <span className="flex justify-center items-center p-5 w-full">
                                         <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect x="0.333374" width="64" height="64" rx="32" fill="#f4eee2" />
@@ -109,7 +71,7 @@ const Projectswiper = () => {
                                         </svg>
                                     </span>
                                 </Link>
-                            </div> */}
+                            </div> 
                             <div className="flex flex-col gap-2 lg:gap-4">
                                 <h3>{value.title}</h3>
                                 <div className="flex gap-3">
