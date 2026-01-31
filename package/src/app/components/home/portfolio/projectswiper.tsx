@@ -57,8 +57,14 @@ const Projectswiper = () => {
                                 </div>
                                 <Link
                                     href={`/projects/${value.slug}`}
-                                    className="  absolute top-0 left-0 backdrop-blur-xs bg-black/70 w-full h-full flex md:hidden md:hidden md:group-hover:flex">
-                                    <span className="flex justify-center items-center p-5 w-full">
+                                    className=" absolute inset-0">
+                                    <span className=" absolute inset-0
+      bg-black/70 backdrop-blur-xs
+      opacity-0
+      transition-opacity duration-200
+      flex items-center justify-center
+      md:group-hover:opacity-100
+      active:opacity-100">
                                         <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect x="0.333374" width="64" height="64" rx="32" fill="#f4eee2" />
                                             <path
