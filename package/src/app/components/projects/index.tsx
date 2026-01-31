@@ -18,10 +18,10 @@ const ProjectList = () => {
             <div className="flex flex-col gap-24">
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        {projects.map((project,index) => {
+                        {projects.map((project, index) => {
                             return (
                                 <div key={index} className="flex flex-col gap-5">
-                                    <div className="relative group">
+                                    {/* <div className="relative group">
                                         <img src={project.coverImage} alt={project.title} className="w-full" />
                                         <Link href={`/projects/${project.slug}`} className="absolute top-0 left-0 backdrop-blur-xs bg-black/70 w-full h-full hidden group-hover:flex">
                                             <span className="flex justify-center items-center p-5 w-full">
@@ -31,7 +31,32 @@ const ProjectList = () => {
                                                 </svg>
                                             </span>
                                         </Link>
-                                    </div>
+                                    </div> */}
+                                    <Link
+                                        href={`/projects/${project.slug}`}
+                                        className="relative group block"
+                                    >
+                                        <img
+                                            src={project.coverImage}
+                                            alt={project.title}
+                                            className="w-full"
+                                        />
+                                        <div className="absolute inset-0 backdrop-blur-xs bg-black/70 
+                                        opacity-0 group-hover:opacity-100 
+                                        transition-opacity duration-300
+                                        flex items-center justify-center">
+                                            <svg width="65" height="64" viewBox="0 0 65 64" fill="none">
+                                                <rect width="64" height="64" rx="32" fill="#f4eee2" />
+                                                <path d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
+                                                    stroke="#1F2A2E"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </Link>
+
                                     <div className="flex flex-col gap-3">
                                         <h3>{project.title}</h3>
                                         <div className="flex gap-3">
