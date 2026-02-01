@@ -37,6 +37,12 @@ const MenuData = [
     path: "/contact",
     newTab: false,
   },
+  {
+    id: 6,
+    title: "System Information Management",
+    path: "https://simumira.com/",
+    newTab: false,
+  },
 ];
 
 
