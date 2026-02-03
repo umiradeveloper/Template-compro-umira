@@ -16,7 +16,7 @@ function HeroSection() {
                         muted
                         playsInline
                     >
-                        <source src="/video/banner-video.mp4" type="video/mp4" />
+                        <source src="/video/banner-video.MP4" type="video/mp4" />
                     </video>
 
                     {/* Overlay to improve text readability */}
