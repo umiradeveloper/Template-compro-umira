@@ -8,13 +8,13 @@ import Portfolio from "./components/home/portfolio";
 import Resources from "./components/home/resources";
 import Services from "./components/home/services";
 import StatsFacts from "./components/home/stats-facts";
-// import Team from "./components/home/team";
+ import Team from "./components/home/team";
 // import Testimonial from "./components/home/testimonial";
 
 export const metadata: Metadata = {
     title: "Umira Sinergi Global | Kontraktor Bali",
 };
-//<Team teamdataNumber="06"/>
+
 export default function Home() {
   return (
     <>
@@ -23,6 +23,7 @@ export default function Home() {
       <Portfolio/>
       <Services/>
       <Faq/>
+      {/* <Team teamdataNumber="06"/> */}
       <Resources/>
       <Contact contactdataNumber="10"/>
     </>

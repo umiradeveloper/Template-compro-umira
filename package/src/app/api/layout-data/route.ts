@@ -9,7 +9,7 @@ const MenuData = [
   },
   {
     id: 2,
-    title: "About",
+    title: "About Us",
     path: "/about",
     newTab: false,
   },
@@ -81,6 +81,12 @@ const footerData = {
         { name: "About", href: "/about" },
         { name: "Services", href: "/#services" },
         { name: "Work", href: "/projects" },
+        { 
+          name: "Company Profile", 
+          href: "/docs/dummy.pdf",
+          download: true
+        },
+        // { name: "Company Profile", href: /public/docs/dummy.pdf},
         //{ name: "Terms", href: "/terms-and-conditions" },
         //{ name: "Privacy Policy", href: "/privacy-policy" },
         //{ name: "Error 404", href: "/not-found" }
