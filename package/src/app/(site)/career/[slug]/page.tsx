@@ -1,5 +1,5 @@
 import Herobanner from "@/app/components/shared/hero-banner";
-import { getBlogsBySlug } from "@/lib/blogmarkdown";
+import { getCareerBySlug } from "@/lib/careermarkdown";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Image from "next/image";
 
@@ -10,14 +10,14 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
     const { slug } = await params;
 
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
+    const career = getCareerBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
 
     const siteName = process.env.SITE_NAME || "Umira Sinergi Global";
     const authorName = process.env.AUTHOR_NAME || "Admin";
 
-    if (blog) {
+    if (career) {
         const metadata = {
-            title: `${blog.title || "Single Post Page"} | ${siteName}`,
+            title: `${career.title || "Single Post Page"} | ${siteName}`,
             robots: {
                 index: true,
                 follow: true,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
     } else {
         return {
             title: "Not Found",
-            description: "No blog article has been found",
+            description: "No Career has been found",
             author: authorName,
             robots: {
                 index: false,
@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Post({ params }: Props) {
     const { slug } = await params;
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
+    const career = getCareerBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
 
-    const content = await markdownToHtml(blog.content || "");
+    const content = await markdownToHtml(career.content || "");
 
 
     return (
@@ -66,9 +66,9 @@ export default async function Post({ params }: Props) {
             <section>
                 <div>
                     <Herobanner
-                        bannerimage={blog?.coverImage}
-                        heading={blog?.title}
-                        desc={blog?.detail}
+                        bannerimage={career?.coverImage}
+                        heading={career?.title}
+                        desc={career?.detail}
                         headingClass="blog-heading" />
                 </div>
                 <div className="dark:bg-darkblack">
@@ -78,10 +78,10 @@ export default async function Post({ params }: Props) {
                                 <div className="flex items-center gap-4 md:gap-8 w-full max-w-xl">
                                     <h2 className="text-4xl lg:text-5xl xl:text-56">Scroll to read</h2>
                                 </div>
-                                <p className="text-secondary/70 dark:text-white/70">{blog?.scrolltoread}</p>
+                                <p className="text-secondary/70 dark:text-white/70">{career?.scrolltoread}</p>
                             </div>
-                            <div className="w-full h-700px">
-                                <Image src={blog?.galleryImg} alt="Image" width={1600} height={750} className="w-full h-full object-cover" />
+                            <div className="w-full aspect-square">
+                                <Image src={career?.galleryImg} alt="Image" width={720} height={720} className="w-full h-full object-cover" />
                             </div>
                             <div className="flex justify-end">
                                 {content && (

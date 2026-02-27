@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import path from "path";
+import { title } from "process";
 
 const MenuData = [
   {
@@ -32,13 +34,19 @@ const MenuData = [
     newTab: false,
   },
   {
+    id: 8,
+    title: "Career",
+    path: "/career",
+    newTab: false,
+  },
+  {
     id: 6,
     title: "Contact",
     path: "/contact",
     newTab: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "System Information Management",
     path: "https://simumira.com/",
     newTab: false,
@@ -83,7 +91,7 @@ const footerData = {
         { name: "Work", href: "/projects" },
         { 
           name: "Company Profile", 
-          href: "/docs/dummy.pdf",
+          href: "/docs/COMPRO_USG.pdf",
           download: true
         },
         // { name: "Company Profile", href: /public/docs/dummy.pdf},
