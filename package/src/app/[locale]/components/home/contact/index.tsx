@@ -1,11 +1,13 @@
 
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Contact = (props: { contactdataNumber: string }) => {
     const { contactdataNumber } = props;
+    const t= useTranslations("ContactSection");
     const [submitted, setSubmitted] = useState(false);
     const [loader, setLoader] = useState(false);
     const [contactData, setContactData] = useState<any>(null);
@@ -74,11 +76,11 @@ const Contact = (props: { contactdataNumber: string }) => {
                             <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
                                 <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">07</span>
                                 <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
-                                <p className="section-bedge py-1.5 px-4 rounded-full">Contact us</p>
+                                <p className="section-bedge py-1.5 px-4 rounded-full">{t("name")}</p>
                             </div>
                             <div className="flex flex-col gap-11">
                                 <div className="flex flex-col gap-5 ">
-                                    <h2 className="max-w-3xl">Get in touch</h2>
+                                    <h2 className="max-w-3xl">{t("title")}</h2>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +88,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                     <div className="flex flex-col xl:flex xl:flex-row gap-15 xl:gap-48">
                         <div className="max-w-md flex flex-col gap-9 md:gap-16">
                             <div className="flex flex-col gap-5 md:gap-8">
-                                <p className="max-w-2xl text-secondary/70 dark:text-white/70">Let’s collaborate and create something great. Tell us about your project, we’re ready to listen.</p>
+                                <p className="max-w-2xl text-secondary/70 dark:text-white/70">{t("desc")}</p>
                                 <div>
                                     <ul className="flex flex-col gap-3">
                                         {contactData?.keypoint?.map((value:any, index:any) => {
@@ -122,7 +124,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        placeholder="Name"
+                                        placeholder={t("nama")}
                                     />
                                 </div>
                                 <div>
@@ -144,7 +146,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        placeholder="Tell us about your project"
+                                        placeholder={t("message")}
                                         rows={4} />
                                 </div>
                                 {submitted && (
@@ -152,13 +154,13 @@ const Contact = (props: { contactdataNumber: string }) => {
                                         <div className="bg-primary w-fit p-1 sm:p-1.5 rounded-full flex-shrink-0">
                                             <Image src={"/images/Icon/right-check.svg"} alt="right-icon" width={20} height={20} />
                                         </div>
-                                        <p className="text-secondary">Great!!! Email has been Successfully Sent. We will get in touch asap.</p>
+                                        <p className="text-secondary">{t("success")}</p>
                                     </div>
                                 )}
                                 <div>
                                     {!loader ? (
                                         <button type="submit" className="group relative flex justify-center items-center w-full bg-primary hover:bg-secondary rounded-full transition-all duration-300 ease-in-out cursor-pointer">
-                                            <span className="py-4 px-2 text-lg font-bold text-secondary group-hover:text-white transition-all duration-300 ease-in-out">Submit message</span>
+                                            <span className="py-4 px-2 text-lg font-bold text-secondary group-hover:text-white transition-all duration-300 ease-in-out">{t("submit")}</span>
                                             <div className="absolute top-0.5 right-0.5 transition-all duration-300 ease-in-out group-hover:left-0">
                                                 <svg className="flex items-center transition-transform duration-300 ease-in-out group-hover:rotate-45" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g filter="url(#filter0_d_1_873)">

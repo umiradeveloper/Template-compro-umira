@@ -2,12 +2,14 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 function Services() {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [imagePosition, setImagePosition] = useState<number>(0);
     const [isMdScreen, setIsMdScreen] = useState(false);
     const [servicesData, setServicesData] = useState<any>(null);
+    const t = useTranslations("ServicesSection");
 
     useEffect(() => {
         const checkScreenSize = () => setIsMdScreen(window.innerWidth >= 768);
@@ -59,13 +61,13 @@ function Services() {
                                 </span>
                                 <div className="h-px w-16 bg-white/12" />
                                 <p className="text-base font-medium text-secondary bg-white py-1.5 px-4 rounded-full">
-                                    {servicesData?.name}
+                                    {t("name")}
                                 </p>
                             </div>
                             <div className="flex flex-col gap-11">
                                 <div className="flex flex-col gap-5">
-                                    <h2 className="max-w-3xl text-white">{servicesData?.heading}</h2>
-                                    <p className="max-w-2xl text-white/70">{servicesData?.description}</p>
+                                    <h2 className="max-w-3xl text-white">{t("heading")}</h2>
+                                    <p className="max-w-2xl text-white/70">{t("descp")}</p>
                                 </div>
                             </div>
                         </div>
@@ -96,11 +98,11 @@ function Services() {
                                             onMouseEnter={(e) => handleMouseEnter(index, e)}
                                             className="group py-6 xl:py-10 border-t border-white/12 cursor-pointer flex xl:flex-row flex-col xl:items-center items-start justify-between xl:gap-10 gap-1 relative">
                                             <h3 className="text-white group-hover:text-primary 2xl:w-full 2xl:max-w-sm py-1">
-                                                {value.heading}
+                                                {t(`items.${index}.heading`)}
                                             </h3>
                                             {activeIndex === index && (
                                                 <p className="text-white/70 text-base transition-all duration-300 flex-1">
-                                                    {value.descp}
+                                                    {t(`items.${index}.desc`)}
                                                 </p>
                                             )}
                                         </div>
@@ -108,7 +110,7 @@ function Services() {
                                 </div>
                                 <div>
                                     <Link href="/projects" className="group flex gap-4 items-center w-fit bg-primary border border-primary hover:border hover:border-white/30 hover:bg-secondary rounded-full transition-all duration-200 ease-in-out">
-                                        <span className="pl-6 text-lg font-bold text-secondary group-hover:text-white group-hover:translate-x-12 transform transition-transform duration-200 ease-in-out">See our Work</span>
+                                        <span className="pl-6 text-lg font-bold text-secondary group-hover:text-white group-hover:translate-x-12 transform transition-transform duration-200 ease-in-out"> {t("button")}</span>
                                         <svg className={` py-1 group-hover:-translate-x-37 group-hover:rotate-45 transition-all duration-200 ease-in-out `} width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g filter="url(#filter0_d_1_873)">
                                                 <rect x="3" y="2" width="52" height="52" rx="26" fill="white" />

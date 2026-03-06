@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 
 
 function HeroSection() {
-    const t = useTranslations();
+    const t = useTranslations("HeroSection");
     
     return (
         <ParallaxProvider>
@@ -42,7 +42,6 @@ function HeroSection() {
                                 <p className="text-white/70 max-w-md">
                                     {/* A <span className="text-primary">professional, rapidly growing, sustainable</span> design and engineering construction company since 2016. */}
                                     {t("title")}
-                                    {t("deskripsi")}
                                 </p>
                             </div>
                             <div className="flex flex-col lg:flex-row items-start lg:items-end gap-4">

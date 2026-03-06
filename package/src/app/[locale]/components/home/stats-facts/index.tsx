@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import NavigationLink from "../../shared/navigation-link";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 function StatsFacts() {
     const [statsFactData, setStatsFactData] = useState<any>(null);
@@ -12,6 +13,7 @@ function StatsFacts() {
         triggerOnce: true,
         threshold: 0.5,
     });
+    const t = useTranslations("StatsFacts");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,8 +47,8 @@ function StatsFacts() {
                         </div>
                         <div className="flex flex-col gap-11">
                             <div className="flex flex-col gap-5 ">
-                                <h2 className="max-w-3xl">{statsFactData?.heading}</h2>
-                                <p className="max-w-xl text-secondary/70 dark:text-white/70">{statsFactData?.description}</p>
+                                <h2 className="max-w-3xl">{t("heading")}</h2>
+                                <p className="max-w-xl text-secondary/70 dark:text-white/70">{t("description")}</p>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 {statsFactData && statsFactData?.scoreData?.map((value: any, index: any) => {
@@ -57,7 +59,7 @@ function StatsFacts() {
                                                 {value.numberValue && <span>{value.numberValue}</span>}
                                                 <span>+</span>
                                             </h3>
-                                            <p className="text-base text-secondary/70 dark:text-white/70">{value.scoreDescp}</p>
+                                            <p className="text-base text-secondary/70 dark:text-white/70">{t(`scores.${index}`)}</p>
                                         </div>
                                     )
                                 })}

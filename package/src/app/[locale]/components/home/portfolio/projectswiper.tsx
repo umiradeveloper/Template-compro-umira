@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type Project = {
     title: string;
@@ -14,9 +15,12 @@ type Project = {
 };
 
 const Projectswiper = () => {
+    // const t= useTranslations();
+
     const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
+        // console.log(t);
         fetch("/api/projects")
             .then((res) => res.json())
             .then((data) => setProjects(data));

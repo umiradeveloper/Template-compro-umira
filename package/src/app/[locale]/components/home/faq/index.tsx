@@ -3,9 +3,11 @@
 
 import { useEffect, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../ui/accordian";
+import { useTranslations } from "next-intl";
 
 
 function Faq() {
+    const t= useTranslations("FaqSection");
     const [faqData, setFaqData] = useState<any>(null);
     
         useEffect(() => {
@@ -35,8 +37,8 @@ function Faq() {
                                 </div>
                                 <div className="flex flex-col gap-11">
                                     <div className="flex flex-col gap-5 ">
-                                        <h2 className="max-w-3xl">Frequently asked questions</h2>
-                                        <p className="max-w-2xl text-secondary/70 dark:text-white/70">Have questions? We’ve got answers. Explore our FAQ to learn more about our process, services, and standards.</p>
+                                        <h2 className="max-w-3xl">{t("title")}</h2>
+                                        <p className="max-w-2xl text-secondary/70 dark:text-white/70">{t("desc")}</p>
                                     </div>
                                 </div>
                             </div>
@@ -49,10 +51,10 @@ function Faq() {
                                             value={`item-${index}`}
                                         >
                                             <AccordionTrigger>
-                                                <h4>{item.faq_que}</h4>
+                                                <h4>{t(`items.${index}.question`)}</h4>
                                             </AccordionTrigger>
                                             <AccordionContent>
-                                                <p>{item.faq_ans}</p>
+                                                <p>{t(`items.${index}.answer`)}</p>
                                             </AccordionContent>
                                         </AccordionItem>
                                     ))}

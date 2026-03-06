@@ -1,4 +1,74 @@
 {
-    "title": "Hello World",
-    "deskripsi": "this desc english"
+    "HeroSection": {
+        "title": "A professional, rapidly growing, sustainable design and engineering construction company since 2016"
+    },
+    "StatsFacts": {
+        "heading": "Delivering Excellence Through Innovation and Experience",
+        "description": "With years of experience and a passionate team, we continue to deliver high quality architectural and interior solutions for our clients.",
+        "button": "Who we are",
+        "scores": [
+            "Years Of Experiences",
+            "Clients that we nurture connections beyond client interests",
+            "The project consists of a total of 429 villa units and 1 hotel. The combined total land area amounts to 47,256.64 m²."
+        ]
+    },
+    "PortfolioSection": {
+        "title": "Our Projects",
+        "desc": "Let’s build something exceptional together. Explore our projects and see how we turn ideas into reality."
+    },
+    "ServicesSection": {
+        "name": "Services",
+        "heading": "What we do",
+        "descp": "From planning to construction, we’re here to support your needs. Discover our services and how we deliver reliable solutions.",
+        "items": [
+            {
+                "heading": "Foundation & Building Construction",
+                "desc": "We specialize in strong foundations and high-quality buildings that meet top industry standards."
+            },
+            {
+                "heading": "Civil Construction & Architecture",
+                "desc": "We craft innovative and resilient solutions in civil construction and architecture, shaping spaces that stand the test of time."
+            },
+            {
+                "heading": "Interior Works",
+                "desc": "We craft exclusive, luxurious interiors that blend opulence with refined functionality, creating spaces that redefine elite living."
+            }
+        ],
+        "button": "See our work"
+    },
+    "FaqSection":{
+        "title": "Frequently Asked Questions",
+        "desc": "Have questions? We’ve got answers. Explore our FAQ to learn more about our process, services, and standards.",
+        "items": [
+            {
+                "question": "What services does Umira Sinergi Global provide?",
+                "answer": "Umira Sinergi Global provides integrated design and build services, including architectural design, structural engineering, MEP systems, construction works, renovation, and project management for villas, residential buildings, commercial spaces, and infrastructure projects."
+            },
+            {
+                "question": "Do you handle projects from design to construction?",
+                "answer": "Kami menghadirkan solusi inovatif dan tangguh dalam konstruksi sipil dan arsitektur, menciptakan ruang yang bertahan lama."
+            },
+            {
+                "question": "How do you ensure quality and safety during construction?",
+                "answer": "Quality and safety are our top priorities. Each project is supervised by experienced engineers and site teams, supported by structured quality control procedures, HSE standards, and regular progress monitoring throughout the construction process."
+            },
+            {
+                "question": "How can I start a project with Umira Sinergi Global?",
+                "answer": "You can start by contacting our team through the Contact Us page. Shate your project details, location, and requirements, and our team will arrange a discussion or site visit to provide the most suitable solution."
+        }
+        ]
+    },
+    "BlogSection": {
+        "title": "Latest Activity",
+        "desc": "Stay connected with our journey. Discover our latest activities, project updates, and on-site progress."
+    },
+    "ContactSection": {
+        "name": "Contact Us",
+        "title": "Get in touch",
+        "desc": "Let’s collaborate and create something great. Tell us about your project, we’re ready to listen.",
+        "nama": "Name",
+        "message": "Tell us about your project",
+        "success": "Great!!! Email has been Successfully Sent. We will get in touch asap.",
+        "submit": "Submit Message"
+    }
 }
