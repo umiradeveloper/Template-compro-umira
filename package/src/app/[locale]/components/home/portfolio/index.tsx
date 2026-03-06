@@ -1,10 +1,10 @@
+"use client";
 import "swiper/css";
 import Projectswiper from "./projectswiper";
 import { useTranslations } from "next-intl";
 
 function Portfolio() {
-    const t = useTranslations("PortfolioSection");
-    console.log("tes"+t);
+    const t = useTranslations();
     return (
         <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
             <div className="flex flex-col gap-24">
@@ -18,8 +18,9 @@ function Portfolio() {
                             </div>
                             <div className="flex flex-col gap-11">
                                 <div className="flex flex-col gap-5 ">
-                                    <h2 className="max-w-3xl">{t("title")}</h2>
-                                    <p className="max-w-2xl text-secondary/70 dark:text-white/70">{t("desc")}</p>
+                                    <h2 className="max-w-3xl">{t("PortfolioSection.title")}</h2>
+                                    
+                                    <p className="max-w-2xl text-secondary/70 dark:text-white/70">{t("PortfolioSection.desc")}</p>
                                 </div>
                             </div>
                         </div>
