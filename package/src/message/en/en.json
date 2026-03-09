@@ -70,5 +70,10 @@
         "message": "Tell us about your project",
         "success": "Great!!! Email has been Successfully Sent. We will get in touch asap.",
         "submit": "Submit Message"
+    },
+    "AboutHero": {
+        "title": "About Us | Umira Sinergi Global",
+        "heading": "About Us",
+        "desc": "A rapidly growing company since 2016, providing design, engineering, procurement, and construction services across Indonesia."
     }
 }

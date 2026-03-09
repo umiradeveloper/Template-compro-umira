@@ -70,5 +70,10 @@
         "message": "Ceritakan kebutuhan proyek Anda",
         "success": "Berhasil! Email Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.",
         "submit": "Kirim Pesan"
+    },
+    "AboutHero": {
+        "title": "Tentang Kami | Umira Sinergi Global",
+        "heading": "Tentang Kami",
+        "desc": "Sejak tahun 2016, kami terus berkembang pesat dengan menyediakan layanan desain, rekayasa, pengadaan, dan konstruksi di seluruh Indonesia."
     }
 }
