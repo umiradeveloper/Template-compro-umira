@@ -14,7 +14,9 @@
     },
     "PortfolioSection": {
         "title": "Proyek Kami",
-        "desc": "Mari membangun sesuatu yang luar biasa bersama. Jelajahi proyek kami dan lihat bagaimana kami mewujudkan ide menjadi kenyataan."
+        "desc": "Mari membangun sesuatu yang luar biasa bersama. Jelajahi proyek kami dan lihat bagaimana kami mewujudkan ide menjadi kenyataan.",
+        "heading": "Proyek",
+        "headingdesc": "Sebuah pameran kreativitas, strategi, dan hasil. Jelajahi proyek-proyek yang mendefinisikan kami."
     },
     "ServicesSection": {
         "name": "Layanan",
@@ -60,7 +62,9 @@
     },
     "BlogSection": {
         "title": "Aktivitas Terbaru",
-        "desc": "Tetap terhubung dengan perjalanan kami. Jelajahi aktivitas terbaru, pembaruan proyek, dan perkembangan progres di lokasi proyek."
+        "desc": "Tetap terhubung dengan perjalanan kami. Jelajahi aktivitas terbaru, pembaruan proyek, dan perkembangan progres di lokasi proyek.",
+        "heading": "Aktivitas Terbaru",
+        "headingdesc": "Siap memulai sesuatu yang luar biasa? Hubungi kami dan mari terhubung untuk mewujudkannya bersama."
     },
     "ContactSection": {
         "heading": "Kontak",

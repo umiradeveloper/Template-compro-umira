@@ -4,19 +4,19 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import Image from "next/image";
 
 type Props = {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
 
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
+    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
 
     const siteName = process.env.SITE_NAME || "Umira Sinergi Global";
     const authorName = process.env.AUTHOR_NAME || "Admin";
 
     if (blog) {
-        const metadata = {
+        return {
             title: `${blog.title || "Single Post Page"} | ${siteName}`,
             robots: {
                 index: true,
@@ -31,8 +31,6 @@ export async function generateMetadata({ params }: Props) {
                 },
             },
         };
-
-        return metadata;
     } else {
         return {
             title: "Not Found",
@@ -55,11 +53,10 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Post({ params }: Props) {
-    const { slug } = await params;
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"]);
+    const { slug, locale } = await params;
+    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
 
     const content = await markdownToHtml(blog.content || "");
-
 
     return (
         <>

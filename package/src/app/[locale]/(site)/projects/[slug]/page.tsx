@@ -1,4 +1,3 @@
-
 import Herobanner from "@/app/[locale]/components/shared/hero-banner";
 import { getProjectsBySlug } from "@/lib/markdown";
 import markdownToHtml from "@/lib/markdownToHtml";
@@ -6,19 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
 
-    const project = getProjectsBySlug(slug, ["title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"]);
+    const project = getProjectsBySlug(slug, ["title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"], locale);
 
-    const siteName = process.env.SITE_NAME || "Your Site Name";
-    const authorName = process.env.AUTHOR_NAME || "Your Author Name";
+    const siteName = process.env.SITE_NAME || "Umira Sinergi Global";
+    const authorName = process.env.AUTHOR_NAME || "Admin";
 
     if (project) {
-        const metadata = {
+        return {
             title: `${project.title || "Single Post Page"} | ${siteName}`,
             robots: {
                 index: true,
@@ -33,12 +32,10 @@ export async function generateMetadata({ params }: Props) {
                 },
             },
         };
-
-        return metadata;
     } else {
         return {
             title: "Not Found",
-            description: "No blog article has been found",
+            description: "No project has been found",
             author: authorName,
             robots: {
                 index: false,
@@ -57,13 +54,12 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Post({ params }: Props) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
     const project = getProjectsBySlug(slug, [
         "title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"
-    ]);
+    ], locale);
 
     const content = await markdownToHtml(project.content || "");
-
 
     return (
         <>
@@ -79,7 +75,7 @@ export default async function Post({ params }: Props) {
                         <div className="flex flex-col gap-12 md:gap-24 py-20 xl:py-40">
                             <div className="flex flex-col gap-10">
                                 <div>
-                                    <Link href="/projects" className="group flex gap-3 items-center w-fit bg-primary hover:bg-secondary dark:border dark:border-primary dark:hover:border dark:hover:border-white/30 rounded-full transition-all duration-500 ease-in-out">
+                                    <Link href={`/${locale}/projects`} className="group flex gap-3 items-center w-fit bg-primary hover:bg-secondary dark:border dark:border-primary dark:hover:border dark:hover:border-white/30 rounded-full transition-all duration-500 ease-in-out">
                                         <Image src={"/images/Icon/back-btn.svg"} alt="Image" width={42} height={42} className="group-hover:translate-x-16.5 transform transition-transform duration-500 ease-in-out" />
                                         <span className="pr-4 text-lg font-bold text-secondary group-hover:text-white group-hover:-translate-x-10 transform transition-transform duration-500 ease-in-out">Back</span>
                                     </Link>
@@ -118,11 +114,11 @@ export default async function Post({ params }: Props) {
                             <div className="grid gap-8">
                                 {project.gallery.map((image: string, index: number) => (
                                     index === 0 ? (
-                                        <div key={index} className="col-span-2 ">
+                                        <div key={index} className="col-span-2">
                                             <Image src={image} alt="image" width={1600} height={750} className="w-full h-full object-cover" />
                                         </div>
                                     ) : (
-                                        <div key={index} className="col-span-2 md:col-span-1 ">
+                                        <div key={index} className="col-span-2 md:col-span-1">
                                             <Image src={image} alt="image" width={805} height={750} className="w-full h-full object-cover" />
                                         </div>
                                     )

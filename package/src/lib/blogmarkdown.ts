@@ -1,48 +1,40 @@
-
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "markdown/blogs");
 
-export function getBlogsSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getBlogsSlugs(locale: string = "en") {
+  const localeDir = join(postsDirectory, locale);
+  return fs.readdirSync(localeDir);
 }
 
-export function getBlogsBySlug(slug: string, fields: string[] = []) {
+export function getBlogsBySlug(slug: string, fields: string[] = [], locale: string = "en") {
   const realSlug = slug.replace(/\.mdx$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const fullPath = join(postsDirectory, locale, `${realSlug}.mdx`);
 
-  type Items = {
-    // [key: string]: string;
-    [key: string]: string | object;
-  };
+  const fallbackPath = join(postsDirectory, "en", `${realSlug}.mdx`);
+  const filePath = fs.existsSync(fullPath) ? fullPath : fallbackPath;
+
+  const fileContents = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(fileContents);
 
   const items: any = {};
 
   function processImages(content: string) {
-    // You can modify this function to handle image processing
-    // For example, replace image paths with actual HTML image tags
     return content.replace(/!\[.*?\]\((.*?)\)/g, '<img src="$1" alt="" />');
   }
 
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
       items[field] = realSlug;
     }
     if (field === "content") {
-      // You can modify the content here to include images
       items[field] = processImages(content);
     }
-
     if (field === "metadata") {
-      // Include metadata, including the image information
       items[field] = { ...data, coverImage: data.coverImage || null };
     }
-
     if (typeof data[field] !== "undefined") {
       items[field] = data[field];
     }
@@ -51,10 +43,8 @@ export function getBlogsBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
-export function getAllBlogs(fields: string[] = []) {
-  const slugs = getBlogsSlugs();
-  const blogs = slugs
-    .map((slug) => getBlogsBySlug(slug, fields))
-
+export function getAllBlogs(fields: string[] = [], locale: string = "en") {
+  const slugs = getBlogsSlugs(locale);
+  const blogs = slugs.map((slug) => getBlogsBySlug(slug, fields, locale));
   return blogs;
 }

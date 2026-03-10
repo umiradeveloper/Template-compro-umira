@@ -14,7 +14,10 @@
     },
     "PortfolioSection": {
         "title": "Our Projects",
-        "desc": "Lets build something exceptional together. Explore our projects and see how we turn ideas into reality."
+        "desc": "Lets build something exceptional together. Explore our projects and see how we turn ideas into reality.",
+        "heading": "Projects",
+        "headingdesc": "A showcase of creativity, strategy, and results explore the projects that define us."
+
     },
     "ServicesSection": {
         "name": "Services",
@@ -60,7 +63,9 @@
     },
     "BlogSection": {
         "title": "Latest Activity",
-        "desc": "Stay connected with our journey. Discover our latest activities, project updates, and on-site progress."
+        "desc": "Stay connected with our journey. Discover our latest activities, project updates, and on-site progress.",
+        "heading": "Our Activities",
+        "headingdesc": "Excited to begin something amazing? Get in touch—we'd love to connect with you!"
     },
     "ContactSection": {
         "heading": "Contact",
