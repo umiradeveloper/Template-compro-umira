@@ -63,6 +63,8 @@
         "desc": "Tetap terhubung dengan perjalanan kami. Jelajahi aktivitas terbaru, pembaruan proyek, dan perkembangan progres di lokasi proyek."
     },
     "ContactSection": {
+        "heading": "Kontak",
+        "headingdesc": "Siap memulai sesuatu yang luar biasa? Hubungi kami, kami siap mendengarkan kebutuhan Anda.",
         "name": "Hubungi Kami",
         "title": "Mari Terhubung",
         "desc": "Mari berkolaborasi dan wujudkan sesuatu yang luar biasa. Ceritakan kebutuhan proyek Anda, dan kami siap membantu mewujudkannya.",
@@ -72,8 +74,44 @@
         "submit": "Kirim Pesan"
     },
     "AboutHero": {
-        "title": "Tentang Kami | Umira Sinergi Global",
         "heading": "Tentang Kami",
         "desc": "Sejak tahun 2016, kami terus berkembang pesat dengan menyediakan layanan desain, rekayasa, pengadaan, dan konstruksi di seluruh Indonesia."
+    },
+    "AboutDetail": {
+        "title": "Umira Sinergi Global.",
+        "visionTitle": "Visi:",
+        "visionText": "Menjadi perusahaan yang berdaya saing global dengan mengutamakan kualitas dan keberlanjutan, memberikan manfaat luas bagi masyarakat, serta menjunjung tinggi prinsip-prinsip Islam sebagai landasan kesuksesan dan keberkahan.",
+        "missionTitle": "Misi:",
+        "mission": [
+            "Mengintegrasikan prinsip kejujuran, amanah, dan transparansi dalam seluruh aspek bisnis untuk membangun kepercayaan dengan pelanggan, mitra, dan masyarakat luas.",
+            "Memberikan layanan dan produk berkualitas tinggi dengan efisiensi biaya serta ketepatan waktu, berlandaskan nilai ihsan dan keberkahan dalam setiap proses bisnis.",
+            "Menciptakan dampak sosial yang positif, termasuk melalui program pemberdayaan masyarakat dan tanggung jawab sosial perusahaan.",
+            "Mengelola bisnis dengan fokus kuat pada keselamatan dan kesehatan kerja, ramah lingkungan, serta keberlanjutan sesuai konsep kemaslahatan.",
+            "Mematuhi prinsip syariah dalam seluruh aktivitas bisnis guna menjaga integritas dan kesadaran spiritual (taqwa)."
+        ],
+        "valueTitle": "Nilai Perusahaan:",
+        "values": [
+            "Ukhuwah: Persaudaraan dan kasih sayang",
+            "Mashlahat: Memberikan manfaat sebesar-besarnya",
+            "Ikhlas, Istiqomah, Ihsan: Keikhlasan mencari ridha Allah, konsistensi dalam kebaikan, serta kesungguhan dalam setiap usaha",
+            "Rahmah: Kasih sayang dan kelembutan hati",
+            "Amanah: Tanggung jawab dan dapat dipercaya"
+        ]
+    },
+    "AboutStats": {
+        "stats": [
+            {
+                "title": "Klien",
+                "descp": "Kami membangun hubungan lebih dari sekadar kepentingan klien"
+            },
+            {
+                "title": "Tahun Pengalaman",
+                "descp": "Desain, Konstruksi & Infrastruktur"
+            },
+            {
+                "title": "Total Luas Bangunan",
+                "descp": "Proyek ini terdiri dari total 429 unit villa dan 1 hotel. Total luas lahan gabungan untuk villa dan hotel mencapai 47.256,64 m²."
+            }
+        ]
     }
 }

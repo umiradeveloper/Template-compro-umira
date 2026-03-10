@@ -36,7 +36,7 @@
         ],
         "button": "See our work"
     },
-    "FaqSection":{
+    "FaqSection": {
         "title": "Frequently Asked Questions",
         "desc": "Have questions? We’ve got answers. Explore our FAQ to learn more about our process, services, and standards.",
         "items": [
@@ -55,7 +55,7 @@
             {
                 "question": "How can I start a project with Umira Sinergi Global?",
                 "answer": "You can start by contacting our team through the Contact Us page. Shate your project details, location, and requirements, and our team will arrange a discussion or site visit to provide the most suitable solution."
-        }
+            }
         ]
     },
     "BlogSection": {
@@ -63,17 +63,59 @@
         "desc": "Stay connected with our journey. Discover our latest activities, project updates, and on-site progress."
     },
     "ContactSection": {
+        "heading": "Contact",
+        "headingdesc": "Ready to start something great? Reach out we'd love to hear from you.",
         "name": "Contact Us",
         "title": "Get in touch",
-        "desc": "Let’s collaborate and create something great. Tell us about your project, we’re ready to listen.",
+        "desc": "Let’s collaborate and create something great. Tell us about your project, we're ready to listen.",
         "nama": "Name",
         "message": "Tell us about your project",
         "success": "Great!!! Email has been Successfully Sent. We will get in touch asap.",
         "submit": "Submit Message"
     },
     "AboutHero": {
-        "title": "About Us | Umira Sinergi Global",
         "heading": "About Us",
         "desc": "A rapidly growing company since 2016, providing design, engineering, procurement, and construction services across Indonesia."
+    },
+    "AboutDetail": {
+        "title": "Umira Sinergi Global.",
+        "visionTitle": "Vision:",
+        "visionText": "To become a globally competitive company that prioritizes quality and sustainability, brings broad benefits to society, and upholds Islamic principles as the foundation of success and blessings.",
+        "missionTitle": "Mission:",
+        "mission": [
+            "Integrating the principles of honesty, trustworthiness (Amanah), and transparency into all aspects of the business to build trust with customers, partners, and the wider community.",
+            "Delivering high-quality services and products with cost efficiency and on-time delivery, guided by the values of excellence (Ihsan) and blessings in every business process.",
+            "Creating a positive social impact, including through community empowerment programs and corporate social responsibility.",
+            "Managing the business with a strong focus on occupational health and safety, environmental friendliness, and sustainability, in line with the concept of public benefit (Maslahah).",
+            "Complying with Sharia principles in all business activities to uphold integrity and spiritual consciousness (Taqwa)."
+        ],
+        "valueTitle": "Company Value:",
+        "values": [
+            "Ukhuwah: Brotherhood and Compassion",
+            "Mashlahat: Bringing the Greatest Benefit",
+            "Ikhlas, Istiqomah, Ihsan: Sincerity in seeking Allah's pleasure, consistency in truth and goodness, excellence in every endeavor",
+            "Rahmah: Mercy and Kindness of Heart",
+            "Amanah: Responsibility and Trustworthiness"
+        ]
+    },
+    "AboutStats": {
+        "stats": [
+            {
+                "title": "Clients",
+                "descp": "We nurture connections beyond client interests"
+            },
+            {
+                "title": "Years of Experience",
+                "descp": "Design, Construction & Infrastructure"
+            },
+            {
+                "title": "Total Building Area",
+                "descp": "The project consists of a total of 429 villa units and 1 hotel. The combined total land area for the villas and hotel amounts to 47,256.64 m²."
+            }
+        ]
+    },
+    "CareerSection": {
+        "heading": "Career Opportunities",
+        "headingdesc": "Ready to build something meaningful? Explore our open positions and grow your career with us."
     }
 }

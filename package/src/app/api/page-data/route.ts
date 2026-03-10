@@ -235,21 +235,15 @@ const contactData = {
 const aboutusStats = [
     {
         number: 50,
-        postfix:"+",
-        title: 'Clients',
-        descp: "We nurture connections beyond client interests"
+        postfix:"+"
     },
     {
         number: 24,
-        postfix: " Years",
-        title: 'Of Experience',
-        descp: "Design, Construction & Infrastucture"
+        postfix: " +"
     },
     {
         number: 47256,
-        postfix: " m²",
-        title: 'Total Building Area',
-        descp: "The project consists of a total of 429 villa units and 1 hotel. The combined total land area for the villas and hotel amounts to 47,256.64 m²."
+        postfix: " m²"
     },
 ]
 

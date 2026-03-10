@@ -1,18 +1,15 @@
-import Contact from "@/app/[locale]/components/home/contact";
-import Herobanner from "@/app/[locale]/components/shared/hero-banner";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import ContactSite from "@/app/[locale]/(site)/contact/contactSite";
 export const metadata: Metadata = {
-    title: "Contact | Umira Sinergi Global",
+    title: "Contact Us | Umira Sinergi Global",
 };
 
 export default function Page() {
+    const t = useTranslations("ContactSection");
     return (
-        <main>
-            <Herobanner
-                bannerimage="/images/contact/banner/contact-banner.png"
-                heading="Contact"
-                desc="Ready to <span>start something</span> great? Reach out  we’d love to hear from you." />
-            <Contact contactdataNumber="01"/>
-        </main>
+        <>
+        <ContactSite />
+        </>
     );
 };
