@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 
 const CareerListMarkdown = ({Careers, locale}: any)=> {
     const param: any = useParams();
+    console.log(param.locale);
     return(
          <section className="dark:bg-darkblack py-20 md:py-40">
             <div className="flex flex-col gap-24">
