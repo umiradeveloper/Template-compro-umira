@@ -7,8 +7,8 @@ import ThemeToggler from "./ThemeToggle";
 // import { usePathname } from "next/navigation";
 import { usePathname, Link, useRouter } from "@/navigation";
 import { signOut, useSession } from "next-auth/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Logo from "../logo";
+import { useParams } from "next/navigation";
 
 const Header = () => {
     const { data: session } = useSession();
@@ -19,9 +19,14 @@ const Header = () => {
     const [sticky, setSticky] = useState(false);
     // const pathname = usePathname();
     const menuRef = useRef<HTMLDivElement>(null);
+    
 
     const router = useRouter();
-    const pathname = usePathname();
+    const PathnameUse = usePathname();
+    const pathname = PathnameUse.replace(/^\/(en|id)/, "") || "/";
+    const param = useParams();
+    const locale = param.locale;
+
 
     // const switchLocale = (nextLocale: 'id' | 'en') => {
     //     router.replace(pathname, { locale: nextLocale });
@@ -31,7 +36,7 @@ const Header = () => {
     const handleScroll = () => {
         setSticky(window.scrollY >= 80);
     };
-    
+
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -54,6 +59,7 @@ const Header = () => {
 
     // Close menu with animation when clicking outside
     useEffect(() => {
+        console.log(pathname)
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setIsClosing(true); // Start closing animation
@@ -86,7 +92,7 @@ const Header = () => {
     }, [menuOpen]);
 
     return (
-        
+
         <header className={`fixed top-0 z-50 w-full border-t-4 border-primary transition-all duration-500 ease-in-out before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-0 before:bg-primary before:transition-all before:duration-500 before:ease-in-out ${sticky ? "before:h-full" : "before:h-0"}`}>
             <div className="container">
                 <nav className={`relative flex item-center justify-between ${sticky ? 'py-5' : 'py-7'}`}>
@@ -94,7 +100,32 @@ const Header = () => {
                         <Logo sticky={sticky} />
                     </div>
                     <div className="flex items-center gap-7">
-                        <div className="flex item-center gap-3">                        
+                        <div className="flex item-center gap-3">
+                            <div className="flex items-center gap-1 border rounded-full p-1 bg-[#000000]">
+                                <Link
+                                    href={pathname}
+                                    locale="id"
+                                    replace
+                                    className={`px-2 py-1 text-sm rounded-full ${locale === "id"
+                                            ? "bg-primary text-black"
+                                            : "text-white/60 hover:text-white"
+                                        }`}
+                                >
+                                    ID
+                                </Link>
+
+                                <Link
+                                    href={pathname}
+                                    locale="en"
+                                    replace
+                                    className={`px-2 py-1 text-sm rounded-full ${locale === "en"
+                                            ? "bg-primary text-black"
+                                            : "text-white/60 hover:text-white"
+                                        }`}
+                                >
+                                    EN
+                                </Link>
+                            </div>
                             <ThemeToggler />
                             {user?.user || session?.user ? (
                                 <div className="relative group flex items-center justify-center">
