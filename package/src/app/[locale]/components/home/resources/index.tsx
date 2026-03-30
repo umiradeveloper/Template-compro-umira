@@ -1,7 +1,7 @@
 
 
 import { getAllBlogs } from "@/lib/blogmarkdown";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import {Link} from "@/navigation";
 import ResourcesBlog from "./resourcesblog";
@@ -13,9 +13,10 @@ type Blog = {
     coverImage: string;
 };
 const Resources = () => {
+    const locale = useLocale();
     // const t= useTranslations("BlogSection");
     // const param: any = useParams();
-    const blogs: Blog[] = getAllBlogs(["title", "slug", "coverImage", "date"])
+    const blogs: Blog[] = getAllBlogs(["title", "slug", "coverImage", "date"], locale)
         .sort((a, b) => {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
