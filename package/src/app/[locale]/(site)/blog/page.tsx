@@ -1,3 +1,4 @@
+
 import BlogList from "@/app/[locale]/components/blog/blog-list";
 import Herobanner from "@/app/[locale]/components/shared/hero-banner";
 import { Metadata } from "next";
