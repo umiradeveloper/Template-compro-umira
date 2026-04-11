@@ -3,9 +3,9 @@ import Image from "next/image";
 import {Link} from "@/navigation";
 import { useParams } from "next/navigation";
 
-const CareerListMarkdown = ({Careers, locale}: any)=> {
+const CareerListMarkdown = ({Careers}: any)=> {
     const param: any = useParams();
-    console.log(param.locale);
+    // console.log(param.locale);
     return(
          <section className="dark:bg-darkblack py-20 md:py-40">
             <div className="flex flex-col gap-24">
