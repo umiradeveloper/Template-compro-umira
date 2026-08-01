@@ -60,8 +60,8 @@ const footerData = {
     info: [
         {
             icon: "/images/footer/email-arrow.svg",
-            link: "info@umiraglobal.com",
-            href: "mailto:info@umiraglobal.com"
+            link: "office@umiraglobal.com",
+            href: "mailto:office@umiraglobal.com"
         },
         {
             icon: "/images/footer/Location.svg",

@@ -176,8 +176,8 @@ const Header = () => {
 
                                     </div>
                                     <div>
-                                        <Link href="http://wa.me/6281539320248" className="text-secondary/60 dark:text-white/60 hover:text-secondary dark:hover:text-white">+62 815-3932-0248</Link>
-                                        <Link href="mailto:info@umiraglobal.com"><h4>info@umiraglobal.com</h4></Link>
+                                        <Link href="http://wa.me/6282121245959" className="text-secondary/60 dark:text-white/60 hover:text-secondary dark:hover:text-white">+62 821-2124-5959</Link>
+                                        <Link href="mailto:office@umiraglobal.com"><h4>office@umiraglobal.com</h4></Link>
                                     </div>
                                 </div>
                             }

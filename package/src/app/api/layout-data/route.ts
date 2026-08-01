@@ -60,8 +60,8 @@ const footerData = {
     info: [
         {
             icon: "/images/footer/email-arrow.svg",
-            link: "info@umiraglobal.com",
-            href: "mailto:info@umiraglobal.com"
+            link: "office@umiraglobal.com",
+            href: "mailto:office@umiraglobal.com"
         },
         {
             icon: "/images/footer/Location.svg",
@@ -103,7 +103,7 @@ const footerData = {
         { name: "Facebook", href: "https://www.facebook.com/umiraglobal" },
         { name: "Instagram", href: "https://www.instagram.com/umiraglobal" },
         { name: "Youtube", href: "https://youtube.com/@umiraglobal"},
-        { name: "WhatsApp", href: "http://wa.me/6281539320248"}
+        { name: "WhatsApp", href: "http://wa.me/6282121245959"}
     ],
     copyright: "© Umira Sinergi Global copyright 2025"
 };

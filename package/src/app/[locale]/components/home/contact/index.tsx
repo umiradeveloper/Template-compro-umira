@@ -39,7 +39,7 @@ const Contact = (props: { contactdataNumber: string }) => {
         e.preventDefault();
         setLoader(true);
 
-        fetch("https://formsubmit.co/ajax/info.umiraglobal@gmail.com", {
+        fetch("https://formsubmit.co/ajax/office.umiraglobal.com", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
