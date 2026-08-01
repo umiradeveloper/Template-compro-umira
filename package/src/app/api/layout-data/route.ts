@@ -103,7 +103,7 @@ const footerData = {
         { name: "Facebook", href: "https://www.facebook.com/umiraglobal" },
         { name: "Instagram", href: "https://www.instagram.com/umiraglobal" },
         { name: "Youtube", href: "https://youtube.com/@umiraglobal"},
-        { name: "WhatsApp", href: "http://wa.me/6282121245959"}
+        { name: "WhatsApp", href: "http://wa.me/6285715783344"}
     ],
     copyright: "© Umira Sinergi Global copyright 2025"
 };
