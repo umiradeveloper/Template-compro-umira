@@ -1,5 +1,5 @@
 import Herobanner from "@/app/[locale]/components/shared/hero-banner";
-import { getProjectsBySlug } from "@/lib/markdown";
+import { getProjectBySlugCms } from "@/lib/cms";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,7 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
     const { slug, locale } = await params;
 
-    const project = getProjectsBySlug(slug, ["title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"], locale);
+    const project = await getProjectBySlugCms(slug, ["title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"], locale);
 
     const siteName = process.env.SITE_NAME || "Umira Sinergi Global";
     const authorName = process.env.AUTHOR_NAME || "Admin";
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Post({ params }: Props) {
     const { slug, locale } = await params;
-    const project = getProjectsBySlug(slug, [
+    const project = await getProjectBySlugCms(slug, [
         "title", "ScopeOfWork", "industry", "raised", "website", "description", "coverImage", "gallery", "content"
     ], locale);
 

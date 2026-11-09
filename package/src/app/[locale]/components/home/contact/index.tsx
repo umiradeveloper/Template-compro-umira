@@ -39,23 +39,35 @@ const Contact = (props: { contactdataNumber: string }) => {
         e.preventDefault();
         setLoader(true);
 
-        fetch("https://formsubmit.co/ajax/office@umiraglobal.com", {
+        const payload = { name: formData.name, email: formData.email, message: formData.message };
+        const cmsUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "").replace(/\/$/, "");
+        // 1) simpan ke "Pesan masuk" di Umira CMS
+        const toCms = cmsUrl
+            ? fetch(`${cmsUrl}/api/public/inquiries`, {
+                  method: "POST",
+                  headers: { "Content-type": "application/json" },
+                  body: JSON.stringify({ ...payload, source: "website" }),
+              }).then((r) => r.ok)
+            : Promise.resolve(false);
+        // 2) tetap kirim notifikasi email seperti sebelumnya
+        const toEmail = fetch("https://formsubmit.co/ajax/office@umiraglobal.com", {
             method: "POST",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({
-                name: formData.name,    
-                email: formData.email,
-                message: formData.message,
-            }),
+            body: JSON.stringify(payload),
         })
             .then((response) => response.json())
-            .then((data) => {
-                setSubmitted(data.success);
+            .then((data) => !!data.success)
+            .catch(() => false);
+
+        Promise.all([toCms.catch(() => false), toEmail])
+            .then(([cmsOk, emailOk]) => {
+                setSubmitted(cmsOk || emailOk);
                 setLoader(false);
                 reset();
             })
             .catch((error) => {
                 console.log(error.message);
+                setLoader(false);
             });
     };
     const handleChange = (e: any) => {

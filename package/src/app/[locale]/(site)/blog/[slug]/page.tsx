@@ -1,5 +1,5 @@
 import Herobanner from "@/app/[locale]/components/shared/hero-banner";
-import { getBlogsBySlug } from "@/lib/blogmarkdown";
+import { getBlogBySlugCms } from "@/lib/cms";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
     const { slug, locale } = await params;
 
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
+    const blog = await getBlogBySlugCms(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
 
     const siteName = process.env.SITE_NAME || "Umira Sinergi Global";
     const authorName = process.env.AUTHOR_NAME || "Admin";
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Post({ params }: Props) {
     const { slug, locale } = await params;
-    const blog = getBlogsBySlug(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
+    const blog = await getBlogBySlugCms(slug, ["title", "detail", "date", "coverImage", "scrolltoread", "description", "galleryImg", "content"], locale);
 
     const content = await markdownToHtml(blog.content || "");
 

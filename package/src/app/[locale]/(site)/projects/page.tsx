@@ -1,6 +1,6 @@
 import ProjectList from "@/app/[locale]/components/projects";
 import Herobanner from "@/app/[locale]/components/shared/hero-banner";
-import { getAllProjects } from "@/lib/markdown";
+import { getProjectsCms } from "@/lib/cms";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -16,7 +16,7 @@ export default async function Page({ params }: Props) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "PortfolioSection" });
 
-    const projects = getAllProjects(["title", "slug", "ScopeOfWork", "industry", "coverImage"], locale);
+    const projects = await getProjectsCms(locale);
 
     return (
         <main>

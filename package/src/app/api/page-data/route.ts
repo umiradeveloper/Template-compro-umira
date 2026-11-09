@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cmsGet, localeFromRequest } from "@/lib/cms";
 
 const avatarList = [
     {
@@ -253,7 +254,10 @@ const servicesSliderData = [
 
 
 
-export const GET = async () => {
+export const GET = async (req: Request) => {
+    // Ambil dari Umira CMS bila tersedia, selain itu pakai data statis di atas
+    const cms = await cmsGet(`/page-data?locale=${localeFromRequest(req)}`);
+    if (cms.data) return NextResponse.json(cms.data);
     return NextResponse.json({
         avatarList,
         statsFactData,
