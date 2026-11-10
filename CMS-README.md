@@ -22,7 +22,7 @@ Template-compro-umira/
 | **Blog & Aktivitas** | CRUD artikel 2 bahasa (ID/EN), editor Markdown + pratinjau, sisip gambar, status draf/terbit/arsip, tanggal terbit, SEO per bahasa, duplikat, aksi massal |
 | **Proyek** | CRUD proyek 2 bahasa, galeri foto, luas area, lokasi, klien, tahun, lingkup pekerjaan (tag), urutan tampil |
 | **Karir** | Lowongan 2 bahasa, tanggal tutup (otomatis hilang dari website), divisi, lokasi, jenis kerja, email/link lamaran |
-| **Media** | Upload gambar/video/PDF (drag & drop) ke MinIO atau server, **ganti file tanpa mengubah alamat** (semua halaman ikut berubah), lihat "dipakai di mana", folder, teks alternatif |
+| **Media** | Upload gambar/video/PDF (drag & drop), folder, teks alternatif, salin URL, hapus |
 | **Konten halaman** | Layanan, statistik, tim, testimoni, FAQ, partner, avatar, marquee, menu header, link footer, kantor, media sosial — tambah, ubah, urutkan, sembunyikan |
 | **Teks website** | Semua teks statis next-intl (judul section, visi-misi, label tombol) dalam 2 bahasa |
 | **Pengaturan** | Identitas & logo, file company profile, video hero, kontak, SEO & Google Analytics |
@@ -77,41 +77,6 @@ npm run dev                 # http://localhost:3005
 
 ---
 
-## Penyimpanan gambar di MinIO
-
-Media bisa disimpan di folder server (`STORAGE_DRIVER=local`, default) atau di **MinIO** (`STORAGE_DRIVER=minio`).
-Di database, file selalu dirujuk sebagai `/uploads/<key>`, jadi driver bisa diganti kapan saja.
-
-1. Jalankan MinIO, contoh cepat dengan Docker:
-   ```bash
-   docker run -d --name minio -p 9000:9000 -p 9001:9001 \
-     -e MINIO_ROOT_USER=minioadmin -e MINIO_ROOT_PASSWORD=ganti-password \
-     -v minio-data:/data minio/minio server /data --console-address ":9001"
-   ```
-2. Isi `backend/.env`:
-   ```
-   STORAGE_DRIVER=minio
-   MINIO_ENDPOINT=http://localhost:9000        # alamat yang dipakai backend
-   MINIO_PUBLIC_URL=http://localhost:9000      # alamat yang dibuka browser (domain publik / CDN)
-   MINIO_ACCESS_KEY=minioadmin
-   MINIO_SECRET_KEY=ganti-password
-   MINIO_BUCKET=umira-cms
-   ```
-   Saat start, backend membuat bucket dan memberi akses **baca publik** otomatis
-   (matikan dengan `MINIO_AUTO_CREATE_BUCKET=false` bila bucket diatur manual).
-3. Migrasikan file yang sudah ada ke MinIO (backup database dulu: `mysqldump -u root -p umira_cms > backup.sql`):
-   ```bash
-   npm run media:migrate                  # migrasi semua file lama ke MinIO + perbarui rujukan konten
-   npm run media:migrate -- --only-local   # hanya pindahkan file upload lama (backend/uploads)
-   npm run media:migrate -- --images-only  # hanya gambar (tanpa video/PDF)
-   npm run media:migrate -- --dry-run      # lihat dulu tanpa mengubah apa pun
-   ```
-
-**Mengganti gambar:** buka *Media* → klik file → **Ganti file**. Alamat file tetap sama, sehingga semua
-artikel, proyek, dan section yang memakainya langsung menampilkan gambar baru (cache browser maks.
-`STORAGE_CACHE_CONTROL`, default 5 menit). Panel yang sama menampilkan di mana saja file itu dipakai.
-Untuk memakai gambar *berbeda* di satu tempat saja, cukup pilih gambar lain di form kontennya.
-
 ## Cara website memakai CMS
 
 Perubahan di folder `frontend/website/` dibuat seminimal mungkin dan **selalu punya cadangan**:
@@ -141,10 +106,9 @@ Semua endpoint ada di Swagger: `http://localhost:4000/api/docs`.
 ## Deploy dengan Docker
 
 ```bash
-cp docker.env.example .env       # isi JWT_SECRET, password, APP_URL, SITE_URL, MINIO_*
+cp docker.env.example .env       # isi JWT_SECRET, password, APP_URL, SITE_URL
 docker compose up -d --build
 docker compose exec backend node dist/database/seeds/run-seed.js
-docker compose exec backend node dist/database/seeds/import-media.js   # migrasi file lama ke MinIO
 ```
 Backend menjalankan migrasi otomatis saat start (`DB_SYNCHRONIZE=false`).
 Untuk server tanpa Docker: `npm run build && npm run migration:run:prod && npm run start:prod` di `backend/`,
@@ -153,8 +117,7 @@ lalu `npm run build` di `frontend/admin/` dan sajikan folder `frontend/admin/dis
 Catatan production:
 - Ganti `JWT_SECRET` (backend menolak start di production bila masih default).
 - Isi `CORS_ORIGINS` dengan domain admin & website, `APP_URL` dengan domain API publik.
-- Backup database **dan** bucket MinIO (atau folder `backend/uploads` bila memakai driver local).
-- Untuk production, letakkan MinIO di belakang domain HTTPS (mis. `files.umiraglobal.com`) dan isi `MINIO_PUBLIC_URL` dengan domain itu.
+- Folder `backend/uploads` (atau volume `uploads`) harus di-backup bersama database.
 
 ## Menambah jenis konten halaman baru
 

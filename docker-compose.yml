@@ -1,9 +1,7 @@
-# Menjalankan Umira CMS (MySQL + MinIO + backend NestJS + admin panel) dengan Docker.
+# Menjalankan Umira CMS (MySQL + backend NestJS + admin panel) dengan Docker.
 #   docker compose up -d --build
 #   docker compose exec backend node dist/database/seeds/run-seed.js      # isi data awal
-#   docker compose exec backend node dist/database/seeds/import-media.js  # migrasi file lama ke MinIO
 # Admin panel: http://localhost:5173   API: http://localhost:4000/api   Swagger: http://localhost:4000/api/docs
-# MinIO console: http://localhost:9001
 services:
   mysql:
     image: mysql:8.4
@@ -23,30 +21,11 @@ services:
       interval: 5s
       retries: 20
 
-  minio:
-    image: minio/minio:latest
-    restart: unless-stopped
-    command: server /data --console-address ":9001"
-    environment:
-      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
-      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:?isi MINIO_SECRET_KEY di file .env}
-    volumes:
-      - minio-data:/data
-    ports:
-      - "9000:9000"   # API S3 + file publik
-      - "9001:9001"   # web console MinIO
-    healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
-      interval: 5s
-      retries: 20
-
   backend:
     build: ./backend
     restart: unless-stopped
     depends_on:
       mysql:
-        condition: service_healthy
-      minio:
         condition: service_healthy
     environment:
       NODE_ENV: production
@@ -62,12 +41,6 @@ services:
       JWT_SECRET: ${JWT_SECRET:?isi JWT_SECRET di file .env}
       JWT_EXPIRES_IN: 1d
       UPLOAD_DIR: uploads
-      STORAGE_DRIVER: minio
-      MINIO_ENDPOINT: http://minio:9000
-      MINIO_PUBLIC_URL: ${MINIO_PUBLIC_URL:-http://localhost:9000}
-      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY:-minioadmin}
-      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
-      MINIO_BUCKET: ${MINIO_BUCKET:-umira-cms}
       SEED_ADMIN_EMAIL: ${SEED_ADMIN_EMAIL:-admin@umiraglobal.com}
       SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-Admin@12345}
       SEED_CONTENT_DIR: /website
@@ -92,5 +65,4 @@ services:
 
 volumes:
   mysql-data:
-  minio-data:
   uploads:
